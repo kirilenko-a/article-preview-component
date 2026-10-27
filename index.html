@@ -15,10 +15,10 @@
   <body
     class="h-screen flex flex-col px-6 justify-center bg-grey200 font-main md:px-20 xl:px-88.75"
   >
-    <main class="bg-white rounded-[10px] overflow-hidden md:flex">
+    <main class="bg-white rounded-[10px] md:flex">
       <picture class="shrink-0 w-[40%]">
         <img
-          class="md:h-full md:object-cover"
+          class="md:h-full md:object-cover rounded-tl-[10px] rounded-tr-[10px] md:rounded-tr-none md:rounded-bl-[10px]"
           src="./src/assets/drawers.jpg"
           alt="drawers picture"
         />
@@ -41,7 +41,8 @@
         </div>
 
         <div
-          class="py-5.5 px-7.5 bg-grey900 flex justify-between items-center gap-16 hidden"
+          id="footer"
+          class="py-5.5 px-7.5 bg-grey900 justify-between items-center gap-16 hidden"
         >
           <div class="flex gap-6">
             <p class="text-grey400 text-[13px] leading-[1.4] tracking-[25%]">
@@ -69,7 +70,10 @@
             </picture>
           </div>
 
-          <button class="p-2.25 bg-grey500 rounded-full size-8 cursor-pointer">
+          <button
+            id="footer-grey-btn"
+            class="p-2.25 bg-grey500 rounded-full size-8 cursor-pointer"
+          >
             <img
               class="brightness-0 invert"
               src="./src/assets/icon-share.svg"
@@ -79,7 +83,8 @@
         </div>
 
         <div
-          class="py-4.5 px-7.5 flex justify-between items-center md:py-0 md:px-9 xl:pb-7.5 md:pb-10.25"
+          id="author"
+          class="py-4.5 px-7.5 flex justify-between items-center md:py-0 md:px-9 xl:pb-7.5 md:pb-10.25 relative"
         >
           <div class="flex gap-4 items-center">
             <picture>
@@ -99,9 +104,47 @@
             </div>
           </div>
 
-          <button class="bg-grey200 p-2.25 rounded-full size-8 cursor-pointer">
-            <img src="./src/assets/icon-share.svg" alt="share icon" />
-          </button>
+          <div class="relative">
+            <button
+              id="share-btn"
+              class="bg-grey200 p-2.25 rounded-full size-8 cursor-pointer"
+            >
+              <img
+                id="share-icon"
+                src="./src/assets/icon-share.svg"
+                alt="share icon"
+              />
+            </button>
+
+            <div
+              id="popover"
+              class="hidden gap-6 bg-grey900 justify-center w-62 px-9.5 py-4.25 bottom-[calc(100%+40px)] left-1/2 -translate-x-1/2 rounded-[10px] absolute after:content-[''] after:absolute after:size-4 after:bg-grey900 after:rotate-45 after:top-full after:-translate-y-1/2 after:left-1/2 after:-translate-x-1/2"
+            >
+              <p class="text-grey400 text-[13px] leading-[1.4] tracking-[25%]">
+                SHARE
+              </p>
+
+              <picture class="flex justify-between gap-4">
+                <img
+                  class="w-5 h-5"
+                  src="./src/assets/icon-facebook.svg"
+                  alt="facebook icon"
+                />
+
+                <img
+                  class="w-5 h-5"
+                  src="./src/assets/icon-twitter.svg"
+                  alt="twitter icon"
+                />
+
+                <img
+                  class="w-5 h-5"
+                  src="./src/assets/icon-pinterest.svg"
+                  alt="pinterest icon"
+                />
+              </picture>
+            </div>
+          </div>
         </div>
       </div>
     </main>
